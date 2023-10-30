@@ -2,7 +2,7 @@
 
 ## Clone:
 ```
-git@github.com:sagormax/docker-mysql-phpmyadmin.git
+git clone git@github.com:sagormax/docker-mysql-phpmyadmin.git
 ```
 
 ## Configuration:
