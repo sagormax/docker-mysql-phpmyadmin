@@ -1,0 +1,44 @@
+version: "3.8"
+
+services:
+  database:
+    container_name: docker-mysql-database
+    platform: linux/arm64/v8
+    image: mysql:latest
+    restart: unless-stopped
+    ports:
+      - 3307:3308
+    env_file: .env
+    environment:
+      MYSQL_ROOT_PASSWORD: '${MYSQL_ROOT_PASSWORD}'
+      MYSQL_DATABASE: '${MYSQL_DATABASE}'
+      MYSQL_USER: '${MYSQL_USER}'
+      MYSQL_PASSWORD: '${MYSQL_PASSWORD}'
+    volumes:
+      - ./mysql/data:/var/lib/mysql
+      - ./mysql/conf.d:/etc/mysql/conf.d
+    networks:
+      - docker-mysql-network
+
+  phpmyadmin:
+    container_name: docker-mysql-phpmyadmin
+    depends_on:
+      - database
+    image: phpmyadmin/phpmyadmin
+    restart: unless-stopped
+    ports:
+      - 8089:80
+    env_file: .env
+    environment:
+      PMA_HOST: database
+      MYSQL_ROOT_PASSWORD: '${MYSQL_ROOT_PASSWORD}'
+    networks:
+      - docker-mysql-network
+
+volumes:
+  db-data:
+    driver: local
+
+networks:
+  docker-mysql-network:
+    driver: bridge  
