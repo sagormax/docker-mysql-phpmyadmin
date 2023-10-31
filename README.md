@@ -1,4 +1,4 @@
-# Mysql with phpmyadmin docker container
+# Mysql with phpmyadmin, PostgreSQL, MongoDB with Mongo-Express docker container
 
 ## Clone:
 ```
