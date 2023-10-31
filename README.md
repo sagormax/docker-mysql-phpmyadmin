@@ -34,7 +34,7 @@ MYSQL_PASSWORD=docker_mysql
 ```
 
 ## Additional PostgreSQL:
-### Uncomment following lines for docker-compose.yml file
+Uncomment following lines from `docker-compose.yml` file
 ```
 # postgresql:
   #   container_name: docker-postgresql
@@ -65,7 +65,7 @@ POSTGRESQL_POSTGRES_PASSWORD=docker_postgresql_root
 
 
 ## Additional MongoDB:
-### Uncomment following lines for docker-compose.yml file
+Uncomment following lines from `docker-compose.yml` file
 ```
 # mongodb:
   #   container_name: docker-mongodb
