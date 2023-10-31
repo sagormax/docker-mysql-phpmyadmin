@@ -98,11 +98,16 @@ POSTGRESQL_POSTGRES_PASSWORD=docker_postgresql_root
   #     - docker-mysql-network
 ```
 
+## Mongo-Express:
+http://localhost:8087
+```
+USER: admin
+PASS: pass
+```
+
 ## MongoDB EXPOSE PORT and basic auth:
 ```
 PORT: 27017
-USER: admin
-PASS: pass
 
 # you can update those from .env file
 MONGO_INITDB_ROOT_USERNAME=docker_mongo
